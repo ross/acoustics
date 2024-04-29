@@ -45,7 +45,7 @@ def compare(f, a_name, a, b_name, b, title, vline=None):
     return ax1, ax2
 
 
-def plot_impulse(rate, data, title, tmax=1.0, loc=None, legend=True, height=6, width=12):
+def plot_impulse_responses(rate, data, title, tmax=1.0, loc=None, legend=True, height=6, width=12):
     fig = plt.figure()
     fig.set_figheight(height)
     fig.set_figwidth(width)
@@ -67,8 +67,8 @@ def plot_impulse(rate, data, title, tmax=1.0, loc=None, legend=True, height=6, w
 
     return ax
 
-def compare_impulses(rate, a_name, a, b_name, b, title, tmax=1.0):
-    ax1 = plot_impulse(rate, {
+def compare_impulse_responses(rate, a_name, a, b_name, b, title, tmax=1.0):
+    ax1 = plot_impulse_responses(rate, {
         a_name: a,
         b_name: b,
     }, title, tmax=tmax, loc='lower left')

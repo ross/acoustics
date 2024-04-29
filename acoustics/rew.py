@@ -61,7 +61,7 @@ def rew_rt60s(directory):
     return rt60s
 
 
-def rew_impulses(directory, threshold=0.25):
+def rew_impulse_responses(directory, threshold=0.25):
     impulses = {}
     
     for filename in listdir(directory):

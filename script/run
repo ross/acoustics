@@ -1,0 +1,10 @@
+#!/bin/bash
+
+ROOT=$(dirname $(dirname $0))
+
+cd $ROOT
+
+. ./env/bin/activate
+
+export PYTHONPATH=$(pwd)
+jupyter-lab
