@@ -83,14 +83,13 @@ def rew_impulses(directory, threshold=0.25):
         # and then find the point at which we cross the threshold, our start
         start = np.argmax(data_abs_norm>=threshold)
 
-        # shift to our t0 point
-        data = data[start:]
         # normalize
         data = data / data_max
         
         impulses[key] = {
             'rate': rate,
             'data': data,
+            'start': start,
         }
 
     return impulses
