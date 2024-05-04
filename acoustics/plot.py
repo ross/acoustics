@@ -6,21 +6,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot(f, data, title=None, loc=None, legend=True, vline=None, height=6, width=12):
+def plot(f, data, title=None, loc=None, legend=True, vline=None, height=6, width=12, xscale='log'):
     fig = plt.figure()
     fig.set_figheight(height)
     fig.set_figwidth(width)
     ax = fig.add_subplot()
 
     for name, d in data.items():
-        if len(d) == 3:
-            d = d[2]
-        ax.plot(f, d, label=name)
+        n = len(d)
+        if n == 3 and isinstance(d[2], dict):
+            ax.plot(d[0], d[1], label=name, **d[2])
+        elif len(d) == 2:
+            ax.plot(*d, label=name)
+        else:
+            ax.plot(f, d, label=name)
 
     if vline is not None:
         ax.axvline(vline)
     
-    ax.set_xscale('log')
+    ax.set_xscale(xscale)
     if legend:
         ax.legend(loc=loc or 'upper right')
     if title:

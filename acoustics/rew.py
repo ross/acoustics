@@ -36,20 +36,25 @@ def rew_measurements(directory):
     return measurements
 
 
+def rew_rt60(filename):
+    with open(filename) as fh:
+        freqs = []
+        edts = []
+        topts = []
+        for line in fh.readlines()[14:-3]:
+            freq, bw, _, edt, t20, _, t30, _, topt, _ = line.split(" ", 9)
+            freqs.append(int(freq))
+            edts.append(float(edt))
+            topts.append(float(topt))
+        return np.array(freqs), np.array(edts), np.array(topts)
+
+
 def rew_rt60s(directory):
     rt60s = {}
     for filename in listdir(directory):
         if not filename.startswith('RT60_'):
             continue
-        with open(join(directory, filename)) as fh:
-            freqs = []
-            edts = []
-            topts = []
-            for line in fh.readlines()[14:-3]:
-                freq, bw, _, edt, t20, _, t30, _, topt, _ = line.split(" ", 9)
-                freqs.append(int(freq))
-                edts.append(float(edt))
-                topts.append(float(topt))
+        freqs, edts, topts = rew_rt60(join(directory, filename))
 
         key = filename.replace('RT60_', '').replace('.txt', '')
         rt60s[key] = {
