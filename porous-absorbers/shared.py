@@ -37,6 +37,37 @@ materials = {
         "thickness": 10.25 * 0.0254,
     },
 
+    "OC EcoTouch R-11": {
+        # https://docs.google.com/spreadsheets/d/19q-20qTpKV5g12PiSc1gNrJlG8DYrtqaFeFoYUCxC68/edit#gid=861262967
+        "sigma": 2450,
+        "thickness": 3.5 * 0.0254,
+    },
+
+    "OC EcoTouch R-13": {
+        # https://docs.google.com/spreadsheets/d/19q-20qTpKV5g12PiSc1gNrJlG8DYrtqaFeFoYUCxC68/edit#gid=861262967
+        "sigma": 3500,
+        "thickness": 3.5 * 0.0254,
+    },
+
+    "OC EcoTouch R-15": {
+        # https://docs.google.com/spreadsheets/d/19q-20qTpKV5g12PiSc1gNrJlG8DYrtqaFeFoYUCxC68/edit#gid=861262967
+        "sigma": 5000,
+        "thickness": 3.5 * 0.0254,
+    },
+
+    "OC EcoTouch R-19": {
+        # https://docs.google.com/spreadsheets/d/19q-20qTpKV5g12PiSc1gNrJlG8DYrtqaFeFoYUCxC68/edit#gid=861262967
+        "sigma": 2900,
+        "thickness": 6.5 * 0.0254,
+    },
+
+    # "OC EcoTouch R-34.2*": {
+    #     # R-19 * 1.8
+    #     "sigma": 2900,
+    #     # this is a handmade fill pulling apart a 2nd layer to make something exactly 12" thick
+    #     "thickness": 12 * 0.0254,
+    # },
+
     # https://www.rockwool.com/north-america/products-and-applications/products/safensound/
     'RW Safe n Sound 3"': {
         # https://docs.google.com/spreadsheets/d/19q-20qTpKV5g12PiSc1gNrJlG8DYrtqaFeFoYUCxC68/edit#gid=861262967
