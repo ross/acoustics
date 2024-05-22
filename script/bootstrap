@@ -17,3 +17,23 @@ fi
 . "$VENV_NAME/bin/activate"
 
 python -m pip install -r requirements.txt
+
+
+if which wolframscript; then
+    # wolfram engine for
+    mkdir -p tmp
+    cd tmp
+    if [ ! -d WolframLanguageForJupyter ]; then
+        git clone https://github.com/WolframResearch/WolframLanguageForJupyter.git
+    fi
+    cd WolframLanguageForJupyter
+    ./configure-jupyter.wls add
+
+    cd $ROOT
+else
+    echo ""
+    echo "Wolfram Engine and wolframscript are required for some of the netbooks in this repo."
+    echo "In order to run/customize those notebooks you will need to install install them, "
+    echo "https://www.wolfram.com/engine/, and re-run this script"
+    echo ""
+fi
