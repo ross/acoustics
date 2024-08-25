@@ -75,4 +75,4 @@ def compare_impulse_responses(rate, a_name, a, b_name, b, title, tmax=1.0):
     ax1 = plot_impulse_responses(rate, {
         a_name: a,
         b_name: b,
-    }, title, tmax=tmax, loc='lower left')
+    }, title, tmax=tmax, loc='lower right')
